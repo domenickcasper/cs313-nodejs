@@ -7,8 +7,8 @@ function getUser() {
 	})	
 }
 
-function createPoll() {
-	$.post('/createPoll', function(data, status) {
+function viewPoll() {
+	$.post('/viewPoll', function(data, status) {
 		var html = "<ul>";
 		for (var i = 0; i < data.length; ++i) {
 			html += "<li>" + data[i].question + data[i].start_date + data[i].end_date + "</li>";

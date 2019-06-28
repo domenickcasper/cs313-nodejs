@@ -16,8 +16,8 @@ express()
       res.json(data.rows);
     })
   })
-  .post('/createPoll', function (req, res) {
-    var sqlinsert = "INSERT INTO poll (question, start_date, end_date) VALUES ('What is your favorite Animal?', '2019-06-28', '2019-07-04')";
+  .post('/viewPoll', function (req, res) {
+    var sqlview = "SELECT * FROM poll";
     pool.query(sqlinsert, function (err, data) {
       res.json(data.rows);
     })
