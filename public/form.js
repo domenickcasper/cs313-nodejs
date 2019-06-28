@@ -1,5 +1,5 @@
 function getUser() {
 	$.get('/getUser', function(data, status) {
-		document.getElementById.innerhtml = (JSON.stringify(data));
+		document.getElementById('users').innerhtml = (JSON.stringify(data));
 	})	
 }
