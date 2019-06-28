@@ -18,7 +18,7 @@ express()
   })
   .post('/viewPoll', function (req, res) {
     var sqlview = "SELECT * FROM poll";
-    pool.query(sqlinsert, function (err, data) {
+    pool.query(sqlview, function (err, data) {
       res.json(data.rows);
     })
   })
