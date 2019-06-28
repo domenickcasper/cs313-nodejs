@@ -11,7 +11,7 @@ function createPoll() {
 	$.post('/createPoll', function(data, status) {
 		var html = "<ul>";
 		for (var i = 0; i < data.length; ++i) {
-			html += "<li>" + data[i].question + "</li>";
+			html += "<li>" + data[i].question + data[i].start_date + data[i].end_date + "</li>";
 		}
 		html += "</ul>";
 		document.getElementById("polls").innerHTML = html;
