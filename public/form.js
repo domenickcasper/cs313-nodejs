@@ -13,8 +13,8 @@ function viewPoll() {
 		html += "<tr>" + "<th>Question</th>" + "<th>Start Date</th>" + "<th>End Date</th>" + "</tr>";
 		for (var i = 0; i < data.length; ++i) {
 			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].start_date + "</td>" + "<td>" + data[i].end_date + "</td>";
+			html += "</table>";
 		}
-		html += "</table>";
 		document.getElementById("polls").innerHTML = html;
 	})
 }
