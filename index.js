@@ -13,7 +13,7 @@ express()
   .get('/getUser', function (req, res) {
     var sql = "SELECT * FROM users";
     pool.query(sql, function (err, data) {
-      res.json(data);
+      res.json(data.rows);
     })
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
