@@ -1,6 +1,8 @@
 function getUser() {
 	$.get('/getUser', function(data, status) {
-		document.getElementById("users").innerHTML = (JSON.stringify(data));
-		document.getElementById("demo");
+		var html = "";
+		html += "<h1>" + data.name + "</h1>";
+		html += "<h2>" + data.username + "</h2>"
+		document.getElementById("users").innerHTML = html;
 	})	
 }
