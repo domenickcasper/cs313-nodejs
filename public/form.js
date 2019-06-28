@@ -9,11 +9,12 @@ function getUser() {
 
 function viewPoll() {
 	$.post('/viewPoll', function(data, status) {
-		var html = "<ul>";
+		var html = "<table>"
+		html += "<tr><th>Question</th><th>Start Date</th><th>End Date</th></tr>"
 		for (var i = 0; i < data.length; ++i) {
-			html += "<li>" + data[i].question + data[i].start_date + data[i].end_date + "</li>";
+			html += "<td>" + data[i].question + "</td>" + "<td>" data[i].start_date + "</td>" + "<td>" + data[i].end_date + "</td>";
 		}
-		html += "</ul>";
+		html += "</table>";
 		document.getElementById("polls").innerHTML = html;
 	})
 }
