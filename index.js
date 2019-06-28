@@ -16,6 +16,12 @@ express()
       res.json(data.rows);
     })
   })
+  .post('/getUser', function (req, res) {
+    var sqlinsert = "INSERT INTO poll (question, start_date, end_date) VALUES ('What is your favorite Animal?', '2019-06-28', '2019-07-04')";
+    pool.query(sqlinsert, function (err, data) {
+      res.json(data.rows);
+    })
+  })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
