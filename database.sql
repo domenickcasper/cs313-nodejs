@@ -20,3 +20,7 @@ id SERIAL PRIMARY KEY
 , why VARCHAR(5000)
 );
 
+INSERT INTO users 
+(name, username, password)
+VALUES 
+('Domenick Casper', 'domenickcasper', 'password');
