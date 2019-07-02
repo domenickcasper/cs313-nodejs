@@ -33,7 +33,10 @@ function addPoll() {
 	var end = $("#end").val();
 	var answer = $(".answer");
 
-	alert(question + start + end + answer);
+	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
+		alert("Whatever");
+	})
+	
 }
 
 function hiddenPoll() {
