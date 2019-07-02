@@ -14,13 +14,18 @@
  <button onclick="viewPoll()">View Poll</button>
 
  <div id = "addPollForm">
- 	<form>
- 		Question:<input type="text" id="question">
- 		Answer:<input type="text" id="answer[]">
- 		Start Date:<input type="date" id="start">
- 		End Date:<input type="date" id="end">
+ 	<table>
+ 		<tr>
+ 			<td>Question:<input type="text" id="question"></td>
+ 			<td>Start Date:<input type="date" id="start"></td>
+ 			<td>End Date:<input type="date" id="end"></td>
+ 		</tr>
+ 		<tr id = "appendIt">
+ 			<td>Answer:<input type="text" id="answer[]"></td>
+ 		</tr>
+ 		<input type="button" value="Add Answer" onclick="appendTable()">
  		<input type="button" value="Submit" onclick="addPoll()"> 
- 	</form>
+ 	</table>
  </div>
  <button onclick="showPoll()">Add Poll</button>
 </body>

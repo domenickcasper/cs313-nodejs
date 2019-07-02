@@ -42,5 +42,8 @@ function showPoll() {
 	$("#addPollForm").show();
 	$("#users").hide();
 	$("#polls").hide();
+}
 
+function appendTable() {
+	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" id="answer[]"></td></tr>');
 }
