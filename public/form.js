@@ -33,7 +33,7 @@ function addPoll() {
 	var end = $("#end").val();
 	var answer = $("#answer").val();
 
-	alert(question);
+	alert(question + start + end + answer);
 }
 
 function hiddenPoll() {
