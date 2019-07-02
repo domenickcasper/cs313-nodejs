@@ -5,12 +5,23 @@
 	<script type="text/javascript" src="form.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
-<body>
+<body onload="hiddenPoll()">
  <h1>Welcome to the best and only Polling site you will ever need!</h1>
  <div id = "users"></div>
  <button onclick="getUser()">Get User</button>
 
  <div id = "polls"></div>
  <button onclick="viewPoll()">View Poll</button>
+
+ <div id = "addPollForm">
+ 	<form>
+ 		<input type="text" id="question">
+ 		<input type="text" id="answer[]">
+ 		<input type="date" id="start">
+ 		<input type="date" id="end">
+ 		<input type="button" value="Submit" onclick="addPoll()"> 
+ 	</form>
+ </div>
+ <button onclick="showPoll()">Add Poll</button>
 </body>
 </html>
