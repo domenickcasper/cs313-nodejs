@@ -36,7 +36,7 @@ function addPoll() {
 	var end = ("#end").val();
 	var answer = ("#answer").val();
 
-	alert(question + start + end + answer);
+	alert(question);
 }
 
 function hiddenPoll() {
