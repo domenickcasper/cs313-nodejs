@@ -4,6 +4,10 @@ function getUser() {
 		html += "<h1>Welcome " + data[0].name + "!</h1>";
 		html += "<h2>Your username is: " + data[0].username + "</h2>"
 		document.getElementById("users").innerHTML = html;
+
+	$("#users").show();
+	$("#polls").hide();
+	$("#addPollForm").hide();
 	})	
 }
 
@@ -17,13 +21,17 @@ function viewPoll() {
 		}
 		html += "</table>";
 		document.getElementById("polls").innerHTML = html;
+		$("#polls").show();
+		$("#users").hide();
+		$("#addPollForm").hide();
 	})
 }
 
 function addPoll() {
 	$.post('/addPoll', function(data, status) {
-		alert(status);
+		
 	})
+	alert("Fun Time");
 }
 
 function hiddenPoll() {
