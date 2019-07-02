@@ -31,7 +31,7 @@ function addPoll() {
 	var question = $("#question").val();
 	var start = $("#start").val();
 	var end = $("#end").val();
-	var answer = $(".answer").val();
+	var answer = $(".answer");
 
 	alert(question + start + end + answer);
 }
