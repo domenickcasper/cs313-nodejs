@@ -14,9 +14,9 @@ function getUser() {
 function viewPoll() {
 	$.post('/viewPoll', function(data, status) {
 		var html = "<table>";
-		html += "<tr>" + "<th>Question</th>" + "<th>Start Date</th>" + "<th>End Date</th>" + "</tr>";
+		html += "<tr>" + "<th>Question</th>" + "<th>End Date</th>" + "<th>Answers</th>" + "</tr>";
 		for (var i = 0; i < data.length; ++i) {
-			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].start_date + "</td>" + "<td>" + data[i].end_date + "</td>";
+			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].end_date + "</td>" + "<td>" + data[i].answer + "</td>";
 
 		}
 		html += "</table>";
@@ -29,9 +29,8 @@ function viewPoll() {
 
 function addPoll() {
 	var question = $("#question").val();
-	var start = $("#start").val();
 	var end = $("#end").val();
-	var answer = $(".answer");
+	var answer = $(".answer").val();
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 		alert("Whatever");
