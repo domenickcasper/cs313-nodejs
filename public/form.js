@@ -31,7 +31,7 @@ function addPoll() {
 	var question = $("#question").val();
 	var start = $("#start").val();
 	var end = $("#end").val();
-	var answer = $("#answer").val();
+	var answer = $(".answer").val();
 
 	alert(question + start + end + answer);
 }
@@ -47,5 +47,5 @@ function showPoll() {
 }
 
 function appendTable() {
-	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" id="answer"></td></tr>');
+	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" class="answer"></td></tr>');
 }
