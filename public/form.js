@@ -32,4 +32,7 @@ function hiddenPoll() {
 
 function showPoll() {
 	$("#addPollForm").show();
+	$("#users").hide();
+	$("#polls").hide();
+
 }
