@@ -27,9 +27,9 @@ function addPoll() {
 }
 
 function hiddenPoll() {
-	$.("#addPollForm").hide();
+	$("#addPollForm").hide();
 }
 
 function showPoll() {
-	$.("#addPollForm").show();
+	$("#addPollForm").show();
 }
