@@ -27,7 +27,7 @@ express()
   })
   .post('/addPoll', function (req, res) {
     console.log(req.body);
-    res.json({});
+    res.json({question: question});
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
