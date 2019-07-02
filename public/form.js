@@ -28,13 +28,10 @@ function viewPoll() {
 }
 
 function addPoll() {
-	$.post('/addPoll', function(data, status) {
-		
-	})
-	var question = ("#question").val();
-	var start = ("#start").val();
-	var end = ("#end").val();
-	var answer = ("#answer").val();
+	var question = $("#question").val();
+	var start = $("#start").val();
+	var end = $("#end").val();
+	var answer = $("#answer").val();
 
 	alert(question);
 }
