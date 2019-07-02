@@ -33,7 +33,7 @@ function addPoll() {
 	var answer = $(".answer").val();
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
-		alert("Whatever");
+		alert(question + end + answer);
 	})
 	
 }
