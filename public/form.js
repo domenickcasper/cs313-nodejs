@@ -33,7 +33,8 @@ function addPoll() {
 	var answer = $(".answer").val();
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
-		console.log(data.answer + data.answer);
+
+		console.log(answer.each());
 		//alert("Almost Complete");
 	})
 	
