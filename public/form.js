@@ -36,6 +36,8 @@ function addPoll() {
 		for (var i = 0; i < answer.length; i++) {
 			console.log(answer[i]);
 		}
+			console.log(question);
+			console.log(end);
 
 		//alert("Almost Complete");
 	})
