@@ -30,9 +30,10 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer[] = $(".answer").val();
+	var answer = $(".answer").text();
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
+
 
 		console.log(answer);
 		console.log(question);
@@ -53,5 +54,5 @@ function showPoll() {
 }
 
 function appendTable() {
-	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" name = "answer[]" class="answer"></td></tr>');
+	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" class="answer"></td></tr>');
 }
