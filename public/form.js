@@ -53,5 +53,5 @@ function showPoll() {
 }
 
 function appendTable() {
-	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" class="answer"></td></tr>');
+	$("#appendIt").after('<tr id = "appendIt"><td>Answer:<input type="text" name = "answer[]" class="answer"></td></tr>');
 }
