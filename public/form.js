@@ -36,7 +36,7 @@ function addPoll() {
 
 			console.log(question);
 			console.log(end);
-			console.log(array).get();
+			console.log(answer).get();
 
 		//alert("Almost Complete");
 	})
