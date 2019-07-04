@@ -30,16 +30,13 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer[] = $(".answer").val();
+	var answer = $(".answer").val();
 
-	$.post('/addPoll', {question: question, end: end, answer[]: answer}, function(data, status) {
+	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 
-		for (var i = 0; i < answer.length; i++) {
-			console.log(answer[i]);
-		}
-			console.log(question);
-			console.log(end);
-
+		console.log(answer);
+		console.log(question);
+		console.log(end);
 		//alert("Almost Complete");
 	})
 	
