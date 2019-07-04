@@ -35,7 +35,7 @@ function addPoll() {
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 
 		for (var i = 0; i < answer.length; i++) {
-			console.log(answer);
+			console.log(answer[i]);
 		}
 			console.log(question);
 			console.log(end);
