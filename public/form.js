@@ -32,7 +32,7 @@ function addPoll() {
 	var end = $("#end").val();
 	var answer[] = $(".answer").val();
 
-	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
+	$.post('/addPoll', {question: question, end: end, answer[]: answer}, function(data, status) {
 
 		for (var i = 0; i < answer.length; i++) {
 			console.log(answer[i]);
