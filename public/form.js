@@ -30,14 +30,13 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer = $(".answer").map(function() {
-		return $(this).val();
-	});
+	var answer = $(".answer").val();
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 
 			console.log(question);
 			console.log(end);
+			console.log(array).get();
 
 		//alert("Almost Complete");
 	})
