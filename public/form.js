@@ -30,7 +30,7 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer = $(".answer").toArray().val();
+	var answer = $(".answer");
 
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 		alert("Almost Complete");
