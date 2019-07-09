@@ -30,10 +30,10 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer = $(".answer").toArray();
+	var answer = $(".answer");
 
 	for (var i = 0; i < answer.length; i++) {
-		alert(answer[i].value);
+		alert(answer[i]);
 	}
 	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
 		alert(JSON.stringify(answer));
