@@ -33,7 +33,7 @@ function addPoll() {
 	var answer = $(".answer").toArray();
 
 	$.post('/addPoll', {question: question, end: end}, function(data, status) {
-		alert(answer);
+		alert(JSON.stringify(answer));
 
 		console.log(answer);
 		console.log(question);
