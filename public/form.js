@@ -31,11 +31,12 @@ function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
 	var answer = $(".answer").toArray();
+	var string = "";
 
 	for (var i = 0; i < answer.length; i++) {
-		alert(answer[i].value);
+		string += answer[i].value + '-';
 	}
-	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
+	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
 		alert(JSON.stringify(answer));
 
 		console.log(answer);
