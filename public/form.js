@@ -17,7 +17,7 @@ function viewPoll() {
 		html += "<tr>" + "<th>Question</th>" + "<th>End Date</th>" + "<th>Answers</th>" + "</tr>";
 		for (var i = 0; i < data.length; ++i) {
 			html += "<tr>";
-			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].end_date + "</td>" + "<td>" + data[i].answer + "</td>";
+			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].end_date.split('T')[0] + "</td>";
 			html += "</tr>";
 		}
 		html += "</table>";
