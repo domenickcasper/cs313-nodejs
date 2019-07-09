@@ -37,11 +37,8 @@ function addPoll() {
 		string += answer[i].value + '-';
 	}
 	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
-		alert(JSON.stringify(answer));
+		alert(data.Message);
 
-		console.log(answer);
-		console.log(question);
-		console.log(end);
 		//alert("Almost Complete");
 	})
 	

@@ -26,8 +26,21 @@ express()
     })
   })
   .post('/addPoll', function (req, res) {
-    console.log(req.body);
-    res.json({});
+    var sql = "INSERT INTO poll (question, start_date, end_date) VALUES ($1, NOW(), $2) RETURNING id;"
+    pool.query(sql, [req.body.question, req.body.end], function (err, data) {
+    	var sqli = "INSERT INTO input(poll_id, input, count, why) VALUES ($1, $2, 0, '')";
+    	var ct = 0;
+    	var ans = req.body.answer.split('-');
+    	for (var i = 0; i < ans.length; i++) {
+    		pool.query(sqli, [data.rows[0].id, ans[i]], function (err, data) {
+    			if (ct == ans.length) {
+    				res.json({Message: "Added to the database"});
+    			}
+    		})
+    	}
+    })
+    
+
   })
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
