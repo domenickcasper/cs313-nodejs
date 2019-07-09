@@ -37,6 +37,7 @@ express()
     				res.json({Message: "Added to the database"});
     			}
     		})
+    		ct++;
     	}
     })
     
