@@ -30,9 +30,9 @@ function viewPoll() {
 function addPoll() {
 	var question = $("#question").val();
 	var end = $("#end").val();
-	var answer = $(".answer").text();
+	var answer = $(".answer");
 
-	$.post('/addPoll', {question: question, end: end, answer: answer}, function(data, status) {
+	$.post('/addPoll', {question: question, end: end}, function(data, status) {
 
 
 		console.log(answer);
