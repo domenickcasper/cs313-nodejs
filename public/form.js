@@ -37,7 +37,7 @@ function viewThePoll(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults(" + data[i].count + ")' value='View Results'><br>";
+			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults(" + data[i].id + ")' value='View Results'><br>";
 		}
 		html += "<input type='submit' onclick='submitPoll()'>";
 		$('#viewThePoll').html(html);
@@ -45,11 +45,11 @@ function viewThePoll(id) {
 	})
 }
 
-function viewResults(count) {
-	$.get('/viewResults?count=' + count, function(data, status) {
+function viewResults(id) {
+	$.get('/viewResults?count=' + id, function(data, status) {
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += data[i].id + data[i].input + " " + "<br>";
+			html += data[i].input + " " + "<br>";
 		}
 		$('#viewThePoll').hide();
 		$('#viewTheResults').html(html);
