@@ -37,7 +37,7 @@ function viewThePoll(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults()' value='View Results'><br>";
+			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults(" + data[i].id + ")' value='View Results'><br>";
 		}
 		html += "<input type='submit' onclick='submitPoll()'>";
 		$('#viewThePoll').html(html);
