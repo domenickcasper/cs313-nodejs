@@ -53,8 +53,8 @@ function viewResults(id) {
 		for (var i = 0; i < data.length; i++) {
 			html += data[i].input + " " + data[i].count "<br>";
 		}
-		$('#viewThePoll').hide();
 		$('#viewTheResults').html(html);
+		$('#viewThePoll').hide();
 		$('#viewTheResults').show();
 	})
 }
