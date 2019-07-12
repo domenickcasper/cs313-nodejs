@@ -14,7 +14,7 @@ function getUser() {
 function viewPoll() {
 	$.post('/viewPoll', function(data, status) {
 		var html = "<table>";
-		html += "<tr>" + "<th>Question</th>" + "<th>End Date</th>" + "<th>Answers</th>" + "</tr>";
+		html += "<tr>" + "<th>Question</th>" + "<th>End Date</th>" + "</tr>";
 		for (var i = 0; i < data.length; ++i) {
 			html += "<tr>";
 			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].end_date.split('T')[0] + "</td>";

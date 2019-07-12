@@ -39,10 +39,12 @@ express()
     		})
     		ct++;
     	}
-    })
-    
-
+    }) 
   })
+  .get('/viewThePoll', function (req, res) {
+  	var sql = "SELECT * FROM poll INNER JOIN input ON poll.id = input.poll_id WHERE poll_id = $1";
+  })
+
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
