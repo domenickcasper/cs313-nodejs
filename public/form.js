@@ -35,9 +35,9 @@ function viewThePoll(id) {
 	$.get('/viewThePoll?question=' + id, function(data, status) {
 		$("#polls").hide();
 		$("#addPollForm").hide();
-		var html = "" + data[0].question + "<br>";
+		var html = "" + data[0].question + "<input type='button' onclick='viewResults(" + data[i].id + ")' value='View Results'>" + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults(" + data[i].id + ")' value='View Results'><br>";
+			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<br>";
 		}
 		html += "<input type='submit' onclick='submitPoll()'>";
 		$('#viewThePoll').html(html);
@@ -47,9 +47,8 @@ function viewThePoll(id) {
 
 function viewResults(id) {
 	$.get('/viewResults?count=' + id, function(data, status) {
-		$('#viewThePoll').hide();
-		//var html = "" + data[0].question + "<br>";
-		var html = "";
+		//$('#viewThePoll').hide();
+		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
 			html += data[i].input + " " + "<br>";
 		}
