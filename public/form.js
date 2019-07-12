@@ -45,7 +45,7 @@ function viewThePoll(id) {
 	})
 }
 
-function viewResults(id) {
+/*function viewResults(id) {
 	$.get('/viewResults?count=' + id, function(data, status) {
 		//$('#viewThePoll').hide();
 		var html = "" + data[0].count + "<br>";
@@ -58,6 +58,7 @@ function viewResults(id) {
 		
 	})
 }
+*/
 
 
 function submitPoll() {
