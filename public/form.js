@@ -26,8 +26,6 @@ function addPoll() {
 	}
 	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
 		alert(data.Message);
-
-		//alert("Almost Complete");
 	})
 	
 }
@@ -38,11 +36,22 @@ function viewThePoll(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<br>";
+			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<input type='button' onclick='viewResults() value='View Results'><br>";
 		}
 		html += "<input type='submit' onclick='submitPoll()'>";
 		$('#viewThePoll').html(html);
 		$('#viewThePoll').show();
+	})
+}
+
+function viewResults(id) {
+	$.get('/viewResults?count=' + id, function(data, status) {
+		$("#polls").hide();
+		$("#addPollForm").hide();
+		var html = "" + data[0].question + "<br>";
+		for (var i = 0; i < data.length; i++) {
+			html += data[i].input + " " + data[i].count;
+		}
 	})
 }
 

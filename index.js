@@ -42,6 +42,13 @@ express()
   	})
   })
 
+  .get('/viewResults', function (req, res) {
+  	var sql = "SELECT poll.question, input.input, input.count FROM poll INNER JOIN input ON poll.id = input.poll_id WHERE poll_id = $1";
+  	pool.query(sql, [req.query.count], function (err, data) {
+  		res.json(data.rows);
+  	})
+  })
+
   .post('/submitPoll', function (req, res) {
   	var sql = "UPDATE input SET count = count + 1 WHERE id = $1";
   	pool.query(sql, [req.body.id], function (err, data) {
