@@ -59,6 +59,7 @@ function viewResults(id) {
 	})
 }
 
+
 function submitPoll() {
 	$.post('/submitPoll', {id:$('#stuff:checked').val()}, function(data, status) {
 		alert("Thanks for Participating! You mean a lot to me!");
