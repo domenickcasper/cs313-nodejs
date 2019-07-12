@@ -47,11 +47,12 @@ function viewThePoll(id) {
 
 function viewResults(id) {
 	$.get('/viewResults?count=' + id, function(data, status) {
+		$('#viewThePoll').hide();
 		//var html = "" + data[0].question + "<br>";
+		var html = "";
 		for (var i = 0; i < data.length; i++) {
 			html += data[i].input + " " + "<br>";
 		}
-		$('#viewThePoll').hide();
 		$('#viewTheResults').html(html);
 		$('#viewTheResults').show();
 		//$('#viewThePoll').hide();
