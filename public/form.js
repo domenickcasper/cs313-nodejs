@@ -51,7 +51,7 @@ function viewResults(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += data[i].input + " " + data[i].count "<br>";
+			html += data[i].input + " " + data[i].count + "<br>";
 		}
 		$('#viewTheResults').html(html);
 		$('#viewThePoll').hide();
