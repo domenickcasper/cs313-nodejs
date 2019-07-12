@@ -43,6 +43,7 @@ function viewThePoll(id) {
 			html += "" + data[i].input + "<br>";
 		}
 		$('#viewThePoll').html(html);
+		$('#viewThePoll').show();
 	})
 }
 
