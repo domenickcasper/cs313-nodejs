@@ -50,7 +50,7 @@ function viewThePoll(id) {
 
 function submitPoll() {
 	//$.post('/submitPoll', function(data, status) {
-		alert($('#stuff').val());
+		alert($('#stuff:checked').val());
 	//})
 }
 
