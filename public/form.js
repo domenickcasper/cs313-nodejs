@@ -49,11 +49,11 @@ function viewResults(id) {
 	$.get('/viewResults?count=' + id, function(data, status) {
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += data[i].input + " " + "<br>";
+			html += data[i].id + data[i].input + " " + "<br>";
 		}
 		$('#viewTheResults').html(html);
 		$('#viewTheResults').show();
-		$('#viewThePoll').hide();
+		//$('#viewThePoll').hide();
 		
 	})
 }
