@@ -16,7 +16,7 @@ function viewPoll() {
 		var html = "<table>";
 		html += "<tr>" + "<th>Question</th>" + "<th>End Date</th>" + "</tr>";
 		for (var i = 0; i < data.length; ++i) {
-			html += "<tr>";
+			html += "<tr onclick='viewThePoll(" + data[i].id + ")'>";
 			html += "<td>" + data[i].question + "</td>" + "<td>" + data[i].end_date.split('T')[0] + "</td>";
 			html += "</tr>";
 		}
@@ -43,6 +43,15 @@ function addPoll() {
 		//alert("Almost Complete");
 	})
 	
+}
+
+function viewThePoll(id) {
+	$.get('/viewThePoll?question=' + id, function(data, status) {
+		var html = "" + data[0].question;
+		for (var i = 0; i < data.length; i++) {
+			html += "" + data[i].input + "<br>";
+		}
+	})
 }
 
 function hiddenPoll() {

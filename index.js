@@ -43,6 +43,9 @@ express()
   })
   .get('/viewThePoll', function (req, res) {
   	var sql = "SELECT * FROM poll INNER JOIN input ON poll.id = input.poll_id WHERE poll_id = $1";
+  	pool.query(sql, [req.query.question], function (err, data) {
+  		res.json(data.rows);
+  	})
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
