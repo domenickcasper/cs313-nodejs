@@ -50,8 +50,11 @@ function viewResults(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += data[i].input + " " + data[i].count;
+			html += data[i].input + " " + data[i].count "<br>";
 		}
+		$('#viewThePoll').hide();
+		$('#viewTheResults').html(html);
+		$('#viewTheResults').show();
 	})
 }
 
