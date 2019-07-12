@@ -47,10 +47,14 @@ function addPoll() {
 
 function viewThePoll(id) {
 	$.get('/viewThePoll?question=' + id, function(data, status) {
+		$("#polls").hide();
+		$("#users").hide();
+		$("#addPollForm").hide();
 		var html = "" + data[0].question;
 		for (var i = 0; i < data.length; i++) {
 			html += "" + data[i].input + "<br>";
 		}
+		$('#viewThePoll').html(html);
 	})
 }
 
