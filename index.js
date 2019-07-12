@@ -36,7 +36,7 @@ express()
     }) 
   })
   .get('/viewThePoll', function (req, res) {
-  	var sql = "SELECT poll.question, input.id FROM poll INNER JOIN input ON poll.id = input.poll_id WHERE poll_id = $1";
+  	var sql = "SELECT poll.question, input.input, input.id FROM poll INNER JOIN input ON poll.id = input.poll_id WHERE poll_id = $1";
   	pool.query(sql, [req.query.question], function (err, data) {
   		res.json(data.rows);
   	})
