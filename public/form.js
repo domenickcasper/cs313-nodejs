@@ -51,6 +51,7 @@ function viewResults(id) {
 		for (var i = 0; i < data.length; i++) {
 			html += data[i].id + data[i].input + " " + "<br>";
 		}
+		$('#viewThePoll').hide();
 		$('#viewTheResults').html(html);
 		$('#viewTheResults').show();
 		//$('#viewThePoll').hide();
