@@ -10,7 +10,6 @@ function viewPoll() {
 		html += "</table>";
 		document.getElementById("polls").innerHTML = html;
 		$("#polls").show();
-		$("#users").hide();
 		$("#addPollForm").hide();
 		$('#viewThePoll').hide();
 	})
@@ -36,7 +35,6 @@ function addPoll() {
 function viewThePoll(id) {
 	$.get('/viewThePoll?question=' + id, function(data, status) {
 		$("#polls").hide();
-		$("#users").hide();
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
@@ -49,9 +47,12 @@ function viewThePoll(id) {
 }
 
 function submitPoll() {
-	//$.post('/submitPoll', function(data, status) {
-		alert($('#stuff:checked').val());
-	//})
+	$.post('/submitPoll', {id:$('#stuff:checked').val()}, function(data, status) {
+		alert("Thanks for Participating! You mean a lot to me!");
+		$("#addPollForm").hide();
+		$("#polls").show();
+		$('#viewThePoll').hide();
+	})
 }
 
 function hiddenPoll() {
@@ -60,7 +61,6 @@ function hiddenPoll() {
 
 function showPoll() {
 	$("#addPollForm").show();
-	$("#users").hide();
 	$("#polls").hide();
 	$('#viewThePoll').hide();
 }

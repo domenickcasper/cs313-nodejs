@@ -42,6 +42,13 @@ express()
   	})
   })
 
+  .post('/submitPoll', function (req, res) {
+  	var sql = "UPDATE input SET count = count + 1 WHERE id = $1";
+  	pool.query(sql, [req.body.id], function (err, data) {
+  		res.json({});
+  	})
+  })
+
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
 
