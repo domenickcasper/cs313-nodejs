@@ -40,7 +40,7 @@ function viewThePoll(id) {
 		$("#addPollForm").hide();
 		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
-			html += "<input type='radio' id='stuff'>"  + data[i].input + "<br>";
+			html += "<input type='radio' id='stuff' name='stuff'>"  + data[i].input + "<br>";
 		}
 		html += "<input type='submit' onclick='submitPoll()'>";
 		$('#viewThePoll').html(html);
