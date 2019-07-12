@@ -12,6 +12,7 @@ function viewPoll() {
 		$("#polls").show();
 		$("#addPollForm").hide();
 		$('#viewThePoll').hide();
+		$('#viewTheResults').hide();
 	})
 }
 
