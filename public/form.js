@@ -1,16 +1,3 @@
-function getUser() {
-	$.get('/getUser', function(data, status) {
-		var html = "";
-		html += "<h1>Welcome " + data[0].name + "!</h1>";
-		html += "<h2>Your username is: " + data[0].username + "</h2>"
-		document.getElementById("users").innerHTML = html;
-
-	$("#users").show();
-	$("#polls").hide();
-	$("#addPollForm").hide();
-	})	
-}
-
 function viewPoll() {
 	$.post('/viewPoll', function(data, status) {
 		var html = "<table>";
@@ -25,6 +12,7 @@ function viewPoll() {
 		$("#polls").show();
 		$("#users").hide();
 		$("#addPollForm").hide();
+		$('#viewThePoll').hide();
 	})
 }
 
@@ -50,7 +38,7 @@ function viewThePoll(id) {
 		$("#polls").hide();
 		$("#users").hide();
 		$("#addPollForm").hide();
-		var html = "" + data[0].question;
+		var html = "" + data[0].question + "<br>";
 		for (var i = 0; i < data.length; i++) {
 			html += "" + data[i].input + "<br>";
 		}
@@ -66,6 +54,7 @@ function showPoll() {
 	$("#addPollForm").show();
 	$("#users").hide();
 	$("#polls").hide();
+	$('#viewThePoll').hide();
 }
 
 function appendTable() {
