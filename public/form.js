@@ -28,6 +28,7 @@ function addPoll() {
 	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
 		alert(data.Message);
 	})
+	$('#viewTheResults').hide();
 	
 }
 
@@ -63,7 +64,6 @@ function viewResults(id) {
 
 function submitPoll(id) {
 	$.post('/submitPoll', {id:$('#stuff:checked').val()}, function(data, status) {
-		alert("Thanks for Participating! You mean a lot to me!");
 		viewResults(id);
 	})
 }
