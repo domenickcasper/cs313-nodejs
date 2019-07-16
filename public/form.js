@@ -44,6 +44,7 @@ function viewThePoll(id) {
 		html += "<input type='submit' class = 'button' onclick='submitPoll(" + id + ")'>";
 		$('#viewThePoll').html(html);
 		$('#viewThePoll').show();
+		$('#viewTheResults').hide();
 	})
 }
 
@@ -56,7 +57,7 @@ function viewResults(id) {
 		}
 		$('#viewTheResults').html(html);
 		$('#viewTheResults').show();
-		//$('#viewThePoll').hide();
+		$('#viewThePoll').hide();
 		
 	})
 }
@@ -77,6 +78,7 @@ function showPoll() {
 	$("#addPollForm").show();
 	$("#polls").hide();
 	$('#viewThePoll').hide();
+	$('#viewTheResults').hide();
 }
 
 function appendTable() {
