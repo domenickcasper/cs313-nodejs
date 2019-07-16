@@ -11,7 +11,7 @@ function viewPoll() {
 		document.getElementById("polls").innerHTML = html;
 		$("#polls").show();
 		$("#addPollForm").hide();
-		//$('#viewThePoll').hide();
+		$('#viewThePoll').hide();
 		$('#viewTheResults').hide();
 	})
 }
