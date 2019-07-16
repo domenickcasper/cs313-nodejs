@@ -39,7 +39,7 @@ function viewThePoll(id) {
 		for (var i = 0; i < data.length; i++) {
 			html += "<input type='radio' id='stuff' name='stuff' value='" + data[i].id + " '>"  + data[i].input + "<br>";
 		}
-		html += "<input type='submit' onclick='submitPoll()'>";
+		html += "<input type='submit' onclick='submitPoll(" + id + ")'>";
 		$('#viewThePoll').html(html);
 		$('#viewThePoll').show();
 	})
@@ -61,12 +61,10 @@ function viewResults(id) {
 
 
 
-function submitPoll() {
+function submitPoll(id) {
 	$.post('/submitPoll', {id:$('#stuff:checked').val()}, function(data, status) {
 		alert("Thanks for Participating! You mean a lot to me!");
-		$("#addPollForm").hide();
-		$("#polls").show();
-		$('#viewThePoll').hide();
+		viewResults(id);
 	})
 }
 
