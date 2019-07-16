@@ -1,11 +1,19 @@
 table, th, td {
   border: 1px solid black;
   text-align: center;
+  font-family: courier;
 }
 
 body {
   background-color: #34519d;
   color: white;
+  font-family: courier;
+}
+
+h1 {
+  font-family: courier;
+  font-size: 40px;
+  text-align: center;
 }
 
 .button {
@@ -14,4 +22,6 @@ body {
   display: inline-block;
   font-size: 16px;
   margin: 4px 2px;
+  font-family: courier;
 }
+
