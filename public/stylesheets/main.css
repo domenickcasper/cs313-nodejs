@@ -2,6 +2,7 @@ table, th, td {
   border: 1px solid black;
   text-align: center;
   font-family: courier;
+  font-size: 30px;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 
 h1 {
   font-family: courier;
-  font-size: 40px;
+  font-size: 38px;
   text-align: center;
 }
 
