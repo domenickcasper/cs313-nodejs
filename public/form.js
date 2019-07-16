@@ -26,7 +26,7 @@ function addPoll() {
 		string += answer[i].value + '-';
 	}
 	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
-		alert(data.Message);
+		//alert(data.Message);
 	})
 	$('#viewThePoll').hide();
 	$('#viewTheResults').hide();
