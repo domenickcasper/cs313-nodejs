@@ -29,6 +29,7 @@ function addPoll() {
 		alert(data.Message);
 	})
 	$('#viewThePoll').show();
+	$('#addPollForm').hide();
 	$('#viewTheResults').hide();
 	
 }
