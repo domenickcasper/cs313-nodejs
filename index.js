@@ -30,6 +30,10 @@ express()
     			if (ct == ans.length - 1) {
     				res.json({Message: "Added to the database"});
     			}
+          else
+          {
+            res.json(data.rows);
+          }
     		})
     		ct++;
     	}
