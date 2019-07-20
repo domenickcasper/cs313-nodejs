@@ -26,7 +26,7 @@ express()
     	var ct = 0;
     	var ans = req.body.answer.split('-');
     	for (var i = 0; i < ans.length - 1; i++) {
-    		pool.query(sqli, [data.id, ans[i]], function (err, data) {
+    		pool.query(sqli, [data[0].rows.id, ans[i]], function (err, data) {
     			if (ct == ans.length - 1) {
     				res.json({Message: "Added to the database"});
     			}
