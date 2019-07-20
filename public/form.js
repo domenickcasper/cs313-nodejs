@@ -29,7 +29,7 @@ function addPoll() {
 		alert(data.Message);
 	})
 	$('#viewThePoll').show();
-	$('#polls').show();
+	$('#polls').hide();
 	$('#addPollForm').hide();
 	
 }
