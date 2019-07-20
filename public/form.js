@@ -28,7 +28,7 @@ function addPoll() {
 	$.post('/addPoll', {question: question, end: end, answer: string}, function(data, status) {
 		alert(data.Message);
 	})
-	$('#viewThePoll').hide();
+	$('#viewThePoll').show();
 	$('#viewTheResults').hide();
 	
 }
